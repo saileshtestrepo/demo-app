@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "dtoValidation": {
+      "type": "object",
+      "required": [
+        "data",
+        "id"
+      ],
+      "properties": {
+        "data": {
+          "type": "string",
+          "title": "Some Data",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/dtoValidation"
+    }
+  ]
+}

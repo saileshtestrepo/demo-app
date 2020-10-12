@@ -1,0 +1,4 @@
+demo:
+  app:
+    value:
+      url: http://localhost:1080/test

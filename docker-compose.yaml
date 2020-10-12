@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+  mockServer:
+    image: mockserver/mockserver:mockserver-5.11.1
+    ports:
+      - 1080:1080
+    environment:
+      MOCKSERVER_PROPERTY_FILE: /config/mockserver.properties
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/initializerJson.json
+    volumes:
+      - ./mockserver/config:/config
+  application:
+    image: saileshtest/demo:latest
+    ports:
+      - 8081:8080
+    depends_on:
+      - mockServer
+    environment:
+      DEMO_APP_VALUE_URL: http://mockServer:1080/test

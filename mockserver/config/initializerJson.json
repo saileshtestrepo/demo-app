@@ -1,0 +1,22 @@
+[
+    {
+        "httpRequest": {
+            "path": "/test"
+        },
+        "httpResponse": {
+            "body": {
+                "value": "mock service response"
+            }
+        }
+    },
+    {
+        "httpRequest": {
+            "path": "/test/api/data"
+        },
+        "httpResponse": {
+            "body": {
+                "value": "mock service response"
+            }
+        }
+    }
+]

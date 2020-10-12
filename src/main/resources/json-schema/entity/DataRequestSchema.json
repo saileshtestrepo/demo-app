@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "modelValidation": {
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "title": "Data",
+          "minLength": 1,
+          "maxLength": 10
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "not": {
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "$ref": "#/definitions/modelValidation"
+    }
+  ]
+}
